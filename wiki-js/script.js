@@ -1,25 +1,23 @@
-function showContent(contentId) {
-    // Ocultar todo el contenido actual
-    var allContent = document.querySelectorAll('.content-item');
-    allContent.forEach(item => {
-        item.style.display = 'none';
-    });
-
-    // Mostrar el contenido específico seleccionado
-    var contentToShow = document.getElementById(contentId);
-    if (contentToShow) {
-        contentToShow.style.display = 'block';
-    }
-}
-
 document.addEventListener('DOMContentLoaded', function () {
     // Mostrar el contenido de Objetivo por defecto
     const objetivo = document.getElementById('objetivo');
     objetivo.style.display = 'block';
-    
+
     // Obtener los enlaces del menú de navegación y las secciones de contenido
     const links = document.querySelectorAll('nav a');
     const sections = document.querySelectorAll('.contenido');
+    const itilSublist = document.getElementById('itil-subcategories');
+
+    // Función para mostrar una sección de contenido por su ID
+    function showContentById(contentId) {
+        sections.forEach(section => {
+            section.style.display = 'none';
+        });
+        const selectedSection = document.getElementById(contentId);
+        if (selectedSection) {
+            selectedSection.style.display = 'block';
+        }
+    }
 
     // Agregar un evento de clic a cada enlace del menú
     links.forEach(link => {
@@ -29,37 +27,47 @@ document.addEventListener('DOMContentLoaded', function () {
             // Obtener el ID del objetivo del enlace clicado
             const targetId = link.getAttribute('href').substring(1);
 
-            // Ocultar todas las secciones de contenido y mostrar solo la seleccionada
-            sections.forEach(section => {
-                section.style.display = 'none';
-                if (section.id === targetId) {
-                    section.style.display = 'block';
-                }
-            });
-
-            // Mostrar la sublista desplegable de ITIL si se hace clic en el enlace correspondiente
-            if (targetId === 'itil') {
-                const itilSublist = document.getElementById('itil-subcategories');
-                if (itilSublist) {
-                    itilSublist.style.display = 'block';
-                }
-            } else {
-                const itilSublist = document.getElementById('itil-subcategories');
-                if (itilSublist) {
-                    itilSublist.style.display = 'none';
-                }
+            // Ocultar el contenido principal excepto la sublista de ITIL
+            if (targetId !== 'itil') {
+                sections.forEach(section => {
+                    if (section !== itilSublist) {
+                        section.style.display = 'none';
+                    }
+                });
             }
+
+            // Mostrar la sublista de ITIL si se hace clic en la sección ITIL
+            if (targetId === 'itil') {
+                itilSublist.style.display = 'block';
+            } else {
+                itilSublist.style.display = 'none';
+            }
+
+            showContentById(targetId); // Mostrar contenido de la sección correspondiente
+
+            // Detener la propagación del evento
+            e.stopPropagation();
         });
     });
 
-    // Agregar un evento de clic a cada sección de contenido
-    sections.forEach(section => {
-        section.addEventListener('click', () => {
-            // Ocultar todas las secciones de contenido y mostrar solo la seleccionada
-            sections.forEach(sec => {
-                sec.style.display = 'none';
-            });
-            section.style.display = 'block';
+    // Agregar un evento de clic a cada enlace de la sublista de ITIL
+    itilSublist.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", function(event) {
+            event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+
+            const contentId = link.getAttribute("data-content-id");
+            showContentById(contentId); // Mostrar contenido de ITIL seleccionado
+
+            // Mostrar la sublista de ITIL
+            itilSublist.style.display = 'block';
         });
+    });
+
+    // Agregar un evento de clic al documento para cerrar la sublista cuando se hace clic fuera de ella o en otro elemento del menú principal
+    document.addEventListener('click', function (event) {
+        const clickedElement = event.target;
+        if (!itilSublist.contains(clickedElement) && !clickedElement.closest('nav')) {
+            itilSublist.style.display = 'none';
+        }
     });
 });

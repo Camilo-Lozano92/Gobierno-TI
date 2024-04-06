@@ -20,7 +20,7 @@ nav {
     float: left;
     background-color: #52af00; /* Verde limón */
     transition: background-color 0.5s ease;
-    position: relative; 
+    position: absolute; 
 }
 
 nav ul {
@@ -32,7 +32,7 @@ nav ul {
 
 nav ul ul {
     display: none; /* Inicialmente oculta los submenús */
-    background-color: #f9f9f9; /* Establece el color de fondo del submenú */
+    background-color: #fff; /* Establece el color de fondo del submenú */
     padding: 10px; /* Añade un relleno al submenú */
     border-radius: 5px; /* Añade bordes redondeados al submenú */
     z-index: 1; /* Establece el índice z para que los submenús aparezcan encima de otros elementos */
@@ -40,6 +40,7 @@ nav ul ul {
     top: 100%; /* Posiciona los submenús debajo de los elementos principales */
     left: 0; /* Posiciona los submenús al principio del elemento padre */
     width: 200px; /* Establece un ancho fijo para los submenús */
+    color: #52af00;
 }
 
 nav ul li {
@@ -48,39 +49,18 @@ nav ul li {
     border-bottom: 1px solid #ddd;
     transition: background-color 0.3s ease;
     display: block;
+    position: relative; /* Posición relativa para los elementos que contienen submenús */
 }
 
 nav ul li a {
     text-decoration: none;
     color: #fff; /* Letras en blanco */
-    transition: color 0.3s ease;
+    transition: color 0.5s ease;
 }
-
 
 nav ul li:hover > ul {
     display: block;
     background-color: #52af00; /* Verde limón */
-   
-}
-
-.sublist-content {
-    background-color: #fff; /* Fondo blanco */
-    padding: 20px;
-    display: none;
-}
-
-.content-item {
-    display: none; /* Por defecto, ocultar todo el contenido */
-}
-
-.content-item.show {
-    display: block; /* Mostrar el contenido cuando tiene la clase 'show' */
-    border: 2px solid #52af00; /* Bordes verdes para resaltar el contenido mostrado */
-    padding: 10px; /* Añadir relleno para separar el contenido del borde */
-}
-
-.sublist-content h3 {
-    color: #52af00; /* Letras en verde limón */
 }
 
 .contenido-container {
@@ -107,11 +87,64 @@ nav ul li:hover > ul {
 .contenido p {
     margin-left: 20px; /* Márgen izquierdo para p */
     text-align: justify; /* Justificar el texto */
-    
 }
+
 #textocorto {
     text-align: center; /* Centro de texto */
 }
+
+
+/* Estilos para las secciones de contenido de la sublista de ITIL */
+.sublist-descripcion {
+    background-color: #fff; /* Fondo blanco */
+    padding: 20px;
+    display: block;
+    text-align: center; /* Alinear el texto a la izquierda */
+    margin-left: 40px; /* Margen a la izquierda */
+    margin-right: 40px; /* Margen a la derecha */
+
+}
+
+.content-item {
+    display: none; /* Mostrar el contenido de los elementos */
+    margin-bottom: 20px; /* Agregar un margen inferior para separar los elementos */
+    border: 1px solid #ccc; /* Añadir un borde alrededor de cada elemento */
+    padding: 10px; /* Agregar relleno alrededor del contenido */
+    border: #fff;
+}
+
+.sublist-descripcion h4 {
+    color: #52af00; /* Letras en verde limón */
+    margin-left: 20px; /* Márgen izquierdo para h2 */
+}
+.sublist-descripcion p {
+    margin-left: 20px; /* Márgen izquierdo para p */
+    text-align: justify; /* Justificar el texto */
+}
+
+
+/* Estilos para las sublistas */
+.sublist-content {
+    list-style: none; /* Quita la viñeta de la lista */
+    padding-left: 0; /* Quita el relleno izquierdo de la lista */
+    margin-top: 0; /* Quita el margen superior de la lista */
+    color: #ddd;
+}
+
+.sublist-content li {
+    padding: 10px 20px; /* Añade un relleno a los elementos de la lista */
+    border-bottom: 1px solid #ddd; /* Añade una línea divisoria entre elementos */
+    color: #52af00;
+    
+}
+
+/* Estilos para los enlaces de la sublista */
+.sublist-content a {
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    color: #52af00; /* Color de texto negro */
+    display: block; /* Convierte los enlaces en bloques para ocupar todo el ancho */
+}
+
 /* Efectos al pasar el ratón */
 nav a:hover {
     color: #52af00; /* Cambiar color de letras en el menú al pasar el mouse */
@@ -131,4 +164,10 @@ nav ul li:hover a {
 
 .contenido-container:hover .contenido h2 {
     color: #52af00; /* Cambiar color de letras al pasar el mouse */
+}
+
+
+.sublist-content a:hover {
+    background-color: #fff; /* Cambia el color de fondo al pasar el ratón */
+    
 }

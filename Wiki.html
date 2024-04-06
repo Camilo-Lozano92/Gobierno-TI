@@ -17,13 +17,13 @@
             <li>
                 <a href="#itil">¿Qué es ITIL?</a>
                 <!-- Sublista desplegable de ITIL -->
-                <ul id="itil-subcategories" style="display: none;">
-                    <li onclick="showContent('introduccion')">Introducción a ITIL</li>
-                    <li onclick="showContent('beneficios')">Beneficios de implementar ITIL</li>
-                    <li onclick="showContent('procesos')">Procesos clave de ITIL</li>
-                    <li onclick="showContent('roles')">Roles y responsabilidades en ITIL</li>
-                    <li onclick="showContent('mejoras')">Mejoras continuas en ITIL</li>
-                    <li onclick="showContent('recursos')">Recursos audiovisuales</li>
+                <ul id="itil-subcategories" style="display: none;" class="sublist-content">
+                    <li><a href="#" data-content-id="introduccion">Introducción a ITIL</a></li>
+                    <li><a href="#" data-content-id="beneficios">Beneficios de implementar ITIL</a></li>
+                    <li><a href="#" data-content-id="procesos">Procesos clave de ITIL</a></li>
+                    <li><a href="#" data-content-id="roles">Roles y responsabilidades en ITIL</a></li>
+                    <li><a href="#" data-content-id="mejoras">Mejoras continuas en ITIL</a></li>
+                    <li><a href="#" data-content-id="recursos">Recursos audiovisuales</a></li>
                 </ul>
             </li>
             <li><a href="#cobit">¿Qué es COBIT?</a></li>
@@ -47,34 +47,51 @@
                 de la información.</p>
         </section>
         <section id="utilizar" class="contenido">
-            <section id="utilizar" class="contenido">
-                <h2>¿Cuál debemos utilizar?</h2>
-                <p id="textocorto">Para responder a esta pregunta es necesario entender las características y diferencias entre ITIL y COBIT.</p>
+            <h2>¿Cuál debemos utilizar?</h2>
+            <p id="textocorto">Para responder a esta pregunta es necesario entender las características y diferencias entre ITIL y COBIT.</p>
             <!-- Espacio para videos -->
             <iframe width="560" height="315" src="https://www.youtube.com/embed/qxUsS_jfa2c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/ZteJcV1ajKk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </section>
         </section>
         <section id="itil" class="contenido">
             <h2>¿Qué es ITIL?</h2>
-        <p>Por sus siglas en inglés, ITIL significa "Biblioteca de infraestructura de tecnologías 
-            de información". ITIL es un conjunto de prácticas recomendadas para la gestión de servicios 
-            de TI. Desarrollado por el gobierno británico en la década de 1980, ITIL se ha convertido 
-            en un estándar de facto para la gestión de servicios de TI en todo el mundo.</p>
-        <p>ITIL es una metodología de gestión que abarca una serie de prácticas y actividades a seguir 
-            para una buena gestión de los servicios de IT, ayudando a las empresas de cualquier sector 
-            a reorganizar la manera en que trabajan, en especial al departamento de IT, para lograr dicho 
-            objetivo. Establece estándares que ayudan a que las empresas identifiquen problemas, administren 
-            y controlen mejor sus recursos para prestar un servicio de alta calidad a los clientes.</p>
+            <p>Por sus siglas en inglés, ITIL significa "Biblioteca de infraestructura de tecnologías 
+                de información". ITIL es un conjunto de prácticas recomendadas para la gestión de servicios 
+                de TI. Desarrollado por el gobierno británico en la década de 1980, ITIL se ha convertido 
+                en un estándar de facto para la gestión de servicios de TI en todo el mundo.</p>
+            <p>ITIL es una metodología de gestión que abarca una serie de prácticas y actividades a seguir 
+                para una buena gestión de los servicios de IT, ayudando a las empresas de cualquier sector 
+                a reorganizar la manera en que trabajan, en especial al departamento de IT, para lograr dicho 
+                objetivo. Establece estándares que ayudan a que las empresas identifiquen problemas, administren 
+                y controlen mejor sus recursos para prestar un servicio de alta calidad a los clientes.</p>
         </section>
         <!-- Aqui se describe la sublista de ITIL.-->
-           <div id="content-container" class="sublist-content">
-                <div id="introduccion-content" class="content-item" style="display: none;">
-                    <h3>Introducción a ITIL</h3>
-                    <p>ITIL, por sus siglas en inglés "Information Technology Infrastructure Library", es un marco de trabajo que describe las mejores prácticas para la gestión de servicios de tecnologías de la información (TI). Se centra en la alineación de los servicios de TI con las necesidades del negocio, mejorando la eficiencia y la entrega de valor.</p>
-                </div>
-            <!-- Aquí se mostrará el contenido específico de ITIL -->
+        <div id="itil-content" class="sublist-descripcion">
+            <div data-content-id="introduccion" class="content-item">
+                <h4>Introducción a ITIL</h4>
+                <p>ITIL, por sus siglas en inglés "Information Technology Infrastructure Library", es un marco de trabajo que describe las mejores prácticas para la gestión de servicios de tecnologías de la información (TI). Se centra en la alineación de los servicios de TI con las necesidades del negocio, mejorando la eficiencia y la entrega de valor.</p>
             </div>
+            <div data-content-id="beneficios" class="content-item">
+                <h4>Beneficios de implementar ITIL</h4>
+                <p>Descripción de los beneficios de implementar ITIL.</p>
+            </div>
+            <div data-content-id="procesos" class="content-item">
+                <h4>Procesos clave de ITIL</h4>
+                <p>Descripción de los procesos clave de ITIL.</p>
+            </div>
+            <div data-content-id="roles" class="content-item">
+                <h4>Roles y responsabilidades en ITIL</h4>
+                <p>Descripción de los roles y responsabilidades en ITIL.</p>
+            </div>
+            <div data-content-id="mejoras" class="content-item">
+                <h4>Mejoras continuas en ITIL</h4>
+                <p>Descripción de las mejoras continuas en ITIL.</p>
+            </div>
+            <div data-content-id="recursos" class="content-item">
+                <h4>Recursos audiovisuales</h4>
+                <p>Descripción de los recursos audiovisuales disponibles para ITIL.</p>
+            </div>
+        </div>
         <section id="cobit" class="contenido">
             <h2>¿Qué es COBIT?</h2>
             <p>Aquí se proporciona información sobre COBIT, incluyendo su objetivo, características, etc.</p>
@@ -96,5 +113,3 @@
     <script src="Wiki-js/script.js"></script>
 </body>
 </html>
-
-
