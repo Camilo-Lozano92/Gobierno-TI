@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki de COBIT e ITIL</title>
+    <link rel="stylesheet" href="Wiki-css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Wiki de COBIT e ITIL</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#objetivo">Objetivo</a></li>
+            <li><a href="#utilizar">¿Cuál debemos utilizar?</a></li>
+            <li>
+                <a href="#itil">¿Qué es ITIL?</a>
+                <!-- Sublista desplegable de ITIL -->
+                <ul id="itil-subcategories" style="display: none;">
+                    <li onclick="showContent('introduccion')">Introducción a ITIL</li>
+                    <li onclick="showContent('beneficios')">Beneficios de implementar ITIL</li>
+                    <li onclick="showContent('procesos')">Procesos clave de ITIL</li>
+                    <li onclick="showContent('roles')">Roles y responsabilidades en ITIL</li>
+                    <li onclick="showContent('mejoras')">Mejoras continuas en ITIL</li>
+                    <li onclick="showContent('recursos')">Recursos audiovisuales</li>
+                </ul>
+            </li>
+            <li><a href="#cobit">¿Qué es COBIT?</a></li>
+            <li><a href="#diferencias">Diferencias entre ITIL y COBIT</a></li>
+            <li><a href="#conclusion">Conclusión</a></li>
+            <li><a href="#referencias">Referencias</a></li>
+        </ul>
+    </nav>
+    <div class="contenido-container">
+        <section id="objetivo" class="contenido">
+            <h2>Objetivo</h2>
+            <p>El objetivo tanto de COBIT como de ITIL es optimizar el uso 
+                de las capacidades informáticas de una empresa para aumentar 
+                su eficacia y eficiencia. Ambos marcos están diseñados para 
+                garantizar la calidad de los servicios de TI, mitigar los 
+                riesgos y gestionar eficazmente los costos asociados. 
+                Al adoptar COBIT e ITIL, las empresas pueden establecer prácticas
+                sólidas y procesos claros que les permiten alcanzar sus objetivos
+                comerciales de manera efectiva, al tiempo que evitan el desperdicio 
+                de recursos y maximizan el valor de sus inversiones en tecnología 
+                de la información.</p>
+        </section>
+        <section id="utilizar" class="contenido">
+            <section id="utilizar" class="contenido">
+                <h2>¿Cuál debemos utilizar?</h2>
+                <p id="textocorto">Para responder a esta pregunta es necesario entender las características y diferencias entre ITIL y COBIT.</p>
+            <!-- Espacio para videos -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/qxUsS_jfa2c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ZteJcV1ajKk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </section>
+        </section>
+        <section id="itil" class="contenido">
+            <h2>¿Qué es ITIL?</h2>
+        <p>Por sus siglas en inglés, ITIL significa "Biblioteca de infraestructura de tecnologías 
+            de información". ITIL es un conjunto de prácticas recomendadas para la gestión de servicios 
+            de TI. Desarrollado por el gobierno británico en la década de 1980, ITIL se ha convertido 
+            en un estándar de facto para la gestión de servicios de TI en todo el mundo.</p>
+        <p>ITIL es una metodología de gestión que abarca una serie de prácticas y actividades a seguir 
+            para una buena gestión de los servicios de IT, ayudando a las empresas de cualquier sector 
+            a reorganizar la manera en que trabajan, en especial al departamento de IT, para lograr dicho 
+            objetivo. Establece estándares que ayudan a que las empresas identifiquen problemas, administren 
+            y controlen mejor sus recursos para prestar un servicio de alta calidad a los clientes.</p>
+        </section>
+        <!-- Aqui se describe la sublista de ITIL.-->
+           <div id="content-container" class="sublist-content">
+                <div id="introduccion-content" class="content-item" style="display: none;">
+                    <h3>Introducción a ITIL</h3>
+                    <p>ITIL, por sus siglas en inglés "Information Technology Infrastructure Library", es un marco de trabajo que describe las mejores prácticas para la gestión de servicios de tecnologías de la información (TI). Se centra en la alineación de los servicios de TI con las necesidades del negocio, mejorando la eficiencia y la entrega de valor.</p>
+                </div>
+            <!-- Aquí se mostrará el contenido específico de ITIL -->
+            </div>
+        <section id="cobit" class="contenido">
+            <h2>¿Qué es COBIT?</h2>
+            <p>Aquí se proporciona información sobre COBIT, incluyendo su objetivo, características, etc.</p>
+            <!-- Espacio para videos -->
+        </section>
+        <section id="diferencias" class="contenido">
+            <h2>Diferencias entre ITIL y COBIT</h2>
+            <p>Esta sección compara y contrasta ITIL y COBIT.</p>
+        </section>
+        <section id="conclusion" class="contenido">
+            <h2>Conclusión</h2>
+            <p>Se presenta la conclusión del análisis de ITIL y COBIT.</p>
+        </section>
+        <section id="referencias" class="contenido">
+            <h2>Referencias</h2>
+            <p>Aquí se colocan las referencias utilizadas.</p>
+        </section>
+    </div>
+    <script src="Wiki-js/script.js"></script>
+</body>
+</html>
+
+
